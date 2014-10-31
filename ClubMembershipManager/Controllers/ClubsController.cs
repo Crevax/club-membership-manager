@@ -1,4 +1,5 @@
 ﻿using ClubMembershipManager.Models;
+using ClubMembershipManager.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +11,17 @@ namespace ClubMembershipManager.Controllers
 {
     public class ClubsController : ApiController
     {
+        private ClubRepository ClubRepository;
+
+        public ClubsController()
+        {
+            this.ClubRepository = new ClubRepository();
+        }
+
         // GET api/clubs
         public IEnumerable<Club> Get()
         {
-            return new Club[]
-            { 
-                new Club
-                {
-                    Id = 1,
-                    Name = "Grand Rapids Steelheaders"
-                },
-                new Club
-                {
-                    Id = 2,
-                    Name = "Circle K at Davenport University"
-                }
-            };
+            return ClubRepository.GetAllClubs();
         }
     }
 }
