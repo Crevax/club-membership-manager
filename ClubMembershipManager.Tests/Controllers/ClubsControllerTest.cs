@@ -21,7 +21,7 @@ namespace ClubMembershipManager.Tests.Controllers
 			ClubsController controller = new ClubsController();
 
 			// Act 
-			IEnumerable<Club> result = controller.Get();
+			List<Club> result = controller.Get();
 
 			// Assert
 			Assert.IsNotNull(result);

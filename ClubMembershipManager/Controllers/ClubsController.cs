@@ -18,10 +18,13 @@ namespace ClubMembershipManager.Controllers
             this.ClubRepository = new ClubRepository();
         }
 
-        // GET api/clubs
-        public IEnumerable<Club> Get()
+        public HttpResponseMessage Get()
         {
-            return ClubRepository.GetAllClubs();
+            var clubs = ClubRepository.GetAllClubs();
+            if (clubs.Count > 0)
+                return Request.CreateResponse(clubs);
+            else 
+                return Request.CreateResponse(HttpStatusCode.NotFound, clubs);
         }
     }
 }
