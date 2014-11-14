@@ -8,9 +8,9 @@ using System.Linq;
 using System.Web;
 using PetaPoco;
 
-namespace ClubMembershipManager.Repository
+namespace ClubMembershipManager.Repositories
 {
-    public class ClubRepository
+    public class ClubRepository : IClubRepository
     {
         public List<Club> GetAllClubs()
         {
