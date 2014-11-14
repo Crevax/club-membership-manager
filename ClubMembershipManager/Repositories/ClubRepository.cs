@@ -8,7 +8,7 @@ using System.Linq;
 using System.Web;
 using PetaPoco;
 
-namespace ClubMembershipManager.Services
+namespace ClubMembershipManager.Repository
 {
     public class ClubRepository
     {
