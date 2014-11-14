@@ -10,6 +10,6 @@ namespace ClubMembershipManager.Repositories
 	{
 		List<Club> GetAllClubs();
 
-		Club GetClub(int id);
+		Club GetClub(int Id);
 	}
 }

@@ -9,6 +9,6 @@ namespace ClubMembershipManager.Services
 	public interface IClubService
 	{
 		IList<Club> GetAllClubs();
-		Club GetClubByID(int Id);
+		Club GetClub(int Id);
 	}
 }

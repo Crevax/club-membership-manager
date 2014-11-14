@@ -27,9 +27,9 @@ namespace ClubMembershipManager.Controllers
                 return Request.CreateResponse(HttpStatusCode.NotFound, clubs);
         }
 
-		public HttpResponseMessage Get(int id)
+		public HttpResponseMessage Get(int Id)
 		{
-			var club = ClubService.GetClubByID(id);
+			var club = ClubService.GetClub(Id);
 
 			if (club != null)
 				return Request.CreateResponse(HttpStatusCode.OK, club);

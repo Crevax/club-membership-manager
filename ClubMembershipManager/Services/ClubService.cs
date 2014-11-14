@@ -20,7 +20,7 @@ namespace ClubMembershipManager.Services
 			return ClubRepository.GetAllClubs();
 		}
 
-		public Models.Club GetClubByID(int Id)
+		public Models.Club GetClub(int Id)
 		{
 			return ClubRepository.GetClub(Id);
 		}

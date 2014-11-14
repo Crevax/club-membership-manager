@@ -19,10 +19,10 @@ namespace ClubMembershipManager.Repositories
 			
         }
 
-		public Club GetClub(int id)
+		public Club GetClub(int Id)
 		{
 			using (Database Memberships = new Database("ClubMembershipManager"))
-				return Memberships.Query<Club>("").Where(c => c.Id == id).FirstOrDefault();
+				return Memberships.Query<Club>("").Where(c => c.Id == Id).FirstOrDefault();
 		}
     }
 }
