@@ -14,16 +14,14 @@ namespace ClubMembershipManager.Services
     {
         public List<Club> GetAllClubs()
         {
-			Database Memberships = new Database("ClubMembershipManager");
-
-			return Memberships.Query<Club>("SELECT * FROM Clubs").ToList<Club>();
+			using (Database Memberships = new Database("ClubMembershipManager"))
+				return Memberships.Query<Club>("").ToList<Club>();
         }
 
 		public Club GetClub(int id)
 		{
-			Database Memberships = new Database("ClubMembershipManager");
-
-			return Memberships.Query<Club>("SELECT * FROM CLUBS").Where(c => c.Id == id).FirstOrDefault();
+			using (Database Memberships = new Database("ClubMembershipManager"))
+				return Memberships.Query<Club>("SELECT * FROM CLUBS").Where(c => c.Id == id).FirstOrDefault();
 		}
     }
 }
