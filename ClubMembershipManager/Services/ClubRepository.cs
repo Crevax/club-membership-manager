@@ -16,12 +16,13 @@ namespace ClubMembershipManager.Services
         {
 			using (Database Memberships = new Database("ClubMembershipManager"))
 				return Memberships.Query<Club>("").ToList<Club>();
+			
         }
 
 		public Club GetClub(int id)
 		{
 			using (Database Memberships = new Database("ClubMembershipManager"))
-				return Memberships.Query<Club>("SELECT * FROM CLUBS").Where(c => c.Id == id).FirstOrDefault();
+				return Memberships.Query<Club>("").Where(c => c.Id == id).FirstOrDefault();
 		}
     }
 }
