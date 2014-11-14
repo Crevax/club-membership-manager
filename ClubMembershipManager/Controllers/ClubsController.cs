@@ -22,7 +22,7 @@ namespace ClubMembershipManager.Controllers
         {
             var clubs = ClubRepository.GetAllClubs();
             if (clubs.Count > 0)
-                return Request.CreateResponse(clubs);
+                return Request.CreateResponse(HttpStatusCode.OK, clubs);
             else 
                 return Request.CreateResponse(HttpStatusCode.NotFound, clubs);
         }
