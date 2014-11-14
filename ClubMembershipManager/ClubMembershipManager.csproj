@@ -169,6 +169,9 @@
     <Compile Include="Models\PetaPoco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClubRepository.cs" />
+    <Compile Include="Repositories\IClubRepository.cs" />
+    <Compile Include="Services\ClubService.cs" />
+    <Compile Include="Services\IClubService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

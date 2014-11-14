@@ -8,8 +8,8 @@ namespace ClubMembershipManager.Repositories
 {
 	public interface IClubRepository
 	{
-		public List<Club> GetAllClubs();
+		List<Club> GetAllClubs();
 
-		public Club GetClub(int id);
+		Club GetClub(int id);
 	}
 }
