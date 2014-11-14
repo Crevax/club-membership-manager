@@ -5,22 +5,22 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using ClubMembershipManager.Repositories;
+using ClubMembershipManager.Services;
 
 namespace ClubMembershipManager.Controllers
 {
     public class ClubsController : ApiController
     {
-        private ClubRepository ClubRepository;
+        private IClubService ClubService;
 
         public ClubsController()
         {
-            this.ClubRepository = new ClubRepository();
+            ClubService = new ClubService();
         }
 
         public HttpResponseMessage Get()
         {
-            var clubs = ClubRepository.GetAllClubs();
+            var clubs = ClubService.GetAllClubs();
             if (clubs.Count > 0)
                 return Request.CreateResponse(HttpStatusCode.OK, clubs);
             else 
@@ -29,7 +29,7 @@ namespace ClubMembershipManager.Controllers
 
 		public HttpResponseMessage Get(int id)
 		{
-			var club = ClubRepository.GetClub(id);
+			var club = ClubService.GetClubByID(id);
 
 			if (club != null)
 				return Request.CreateResponse(HttpStatusCode.OK, club);
